@@ -152,6 +152,7 @@ h3 {
     box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px !important;
     margin: 1vw;
     border-radius: 16px;
+    cursor: pointer;
 }
 
 .activity-details {
