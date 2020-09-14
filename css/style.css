@@ -135,9 +135,10 @@ h3 {
 
 .activities-container {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 25% 25% 25%;
     grid-template-rows: 18vw 18vw 18vw;
     grid-auto-flow: row dense;
+    justify-content: center;
 
 }
 
@@ -209,7 +210,9 @@ footer {
 .city-header {
     margin: 2vw 0vw -3vw 5vw;
 }
-
+.city-description{
+    text-align: center;
+}
 .sorting-menu {
     text-align: center;
     display: flex;
