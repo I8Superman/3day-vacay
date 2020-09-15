@@ -2,6 +2,26 @@ const datalink = "http://spreadsheets.google.com/feeds/list/18QShemZlLoq2j6zasY3
 
 window.addEventListener("DOMContentLoaded", getData);
 
+//PARAM SINGLE CITY
+// fetch(
+//     "https://spreadsheets.google.com/feeds/list/18QShemZlLoq2j6zasY3bNjFkoqkDb_tP7Tpjujma3mg/od6/public/values?alt=json"
+//   ).then(res => res.json())
+//   .then(showCities)
+
+// function showCities(data) {
+//   console.log(data)
+//   data.feed.entry.forEach(city => {
+//     if (city.gsx$city.$t == cityFromUrl) {
+//       const template = document.querySelector(".single_activity").content;
+//       const copy = template.cloneNode(true);
+//       copy.querySelector("h1").textContent = city.gsx$city.$t;
+//       copy.querySelector("a").href = `city.html?city=${city.gsx$city.$t}`
+//       document.querySelector("section").appendChild(copy)
+//     }
+//   })
+
+// }
+
 function getData() {
     fetch(datalink)
         .then(response => response.json())
