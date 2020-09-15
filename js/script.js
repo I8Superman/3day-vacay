@@ -14,9 +14,12 @@ function handleData(data) {
     const myData = data.feed.entry;
     console.log("Here is our data");
     console.log(myData);
+    // Looping through the data, getting individual activites
     myData.forEach(showData);
 }
 
+// Each individual activity gets treated here.
 function showData(singleActivity) {
     console.log(singleActivity.gsx$activitytype.$t);
 }
+
