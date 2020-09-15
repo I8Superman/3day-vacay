@@ -1,5 +1,3 @@
-// Getting the data from Google Sheets
-
 const datalink = "http://spreadsheets.google.com/feeds/list/18QShemZlLoq2j6zasY3bNjFkoqkDb_tP7Tpjujma3mg/od6/public/values?alt=json";
 
 window.addEventListener("DOMContentLoaded", getData);
@@ -20,11 +18,18 @@ function handleData(data) {
 
 // Each individual activity gets treated here.
 function showData(singleActivity) {
-    //console.log(singleActivity.gsx$activitytype.$t);
 // We clone the activity template
     const template = document.querySelector('template').content;
     const activityCopy = template.cloneNode(true);
 // We populate the template
-    const h2 = document.querySelector(".venue_name");
-    h2.textContent = singleActivity.gsx$venuename.$t;
+// Get the image
+    activityCopy.querySelector(".activity_image").setAttribute("src", "http://ssays.dk/kea/common_interest_images/" + singleActivity.gsx$image.$t);
+    const h4 = document.querySelector("h4");
+    h4.textContent = singleActivity.gsx$venuename.$t;
+
+    // Append the template
+    const parentElement = document.querySelector("section");
+    parentElement.appendChild(activityCopy);
 }
+
+e
