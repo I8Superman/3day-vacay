@@ -24,7 +24,7 @@ function showData(singleActivity) {
 
 // We populate the template
 // Get the image
-    myCopy.querySelector(".activity-image").setAttribute("src", "http://ssays.dk/kea/common_interest_images/606club.jpg");
+     myCopy.querySelector(".activity-image").setAttribute("src", "http://ssays.dk/kea/common_interest_images/" + singleActivity.gsx$image.$t + ".jpg"); 
     const h4 = myCopy.querySelector(".activity-headline");
     h4.textContent = singleActivity.gsx$headline.$t;
     const p = myCopy.querySelector('.venue-name');
