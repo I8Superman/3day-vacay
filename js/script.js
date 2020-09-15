@@ -19,17 +19,19 @@ function handleData(data) {
 // Each individual activity gets treated here.
 function showData(singleActivity) {
 // We clone the activity template
-    const template = document.querySelector('template').content;
-    const activityCopy = template.cloneNode(true);
+    const template = document.querySelector(".single_activity").content;
+    const myCopy = template.cloneNode(true);
+
 // We populate the template
 // Get the image
-    activityCopy.querySelector(".activity_image").setAttribute("src", "http://ssays.dk/kea/common_interest_images/" + singleActivity.gsx$image.$t);
-    const h4 = document.querySelector("h4");
-    h4.textContent = singleActivity.gsx$venuename.$t;
+    myCopy.querySelector(".activity-image").setAttribute("src", "http://ssays.dk/kea/common_interest_images/606club.jpg");
+    const h4 = myCopy.querySelector(".activity-headline");
+    h4.textContent = singleActivity.gsx$headline.$t;
+    const p = myCopy.querySelector('.venue-name');
+    p.textContent = singleActivity.gsx$venuename.$t;
 
     // Append the template
     const parentElement = document.querySelector("section");
-    parentElement.appendChild(activityCopy);
+    parentElement.appendChild(myCopy);
 }
 
-e
