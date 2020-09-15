@@ -4,10 +4,10 @@ const datalink = "http://spreadsheets.google.com/feeds/list/18QShemZlLoq2j6zasY3
 
 window.addEventListener("DOMContentLoaded", getData);
 
-function getData(){
+function getData() {
     fetch(datalink)
-    .then(response => response.json())
-    .then(handleData);
+        .then(response => response.json())
+        .then(handleData);
 }
 
 function handleData(data) {
@@ -20,6 +20,11 @@ function handleData(data) {
 
 // Each individual activity gets treated here.
 function showData(singleActivity) {
-    console.log(singleActivity.gsx$activitytype.$t);
+    //console.log(singleActivity.gsx$activitytype.$t);
+// We clone the activity template
+    const template = document.querySelector('template').content;
+    const activityCopy = template.cloneNode(true);
+// We populate the template
+    const h2 = document.querySelector(".venue_name");
+    h2.textContent = singleActivity.gsx$venuename.$t;
 }
-
